@@ -4,10 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Karl</title>
-  <meta name="description" content="Portfolio en ingénierie mathématique, Data Science et intelligence artificielle.">
+
+  <title>Karl | Ingénierie Mathématique & Data Science</title>
+
+  <meta name="description" content="Portfolio de Karl, élève-ingénieur en Ingénierie Mathématique et Data Science à Polytech Clermont.">
+
+  <meta name="theme-color" content="#0b1120">
 
   <style>
+    /* =========================
+       1. CONFIGURATION GÉNÉRALE
+    ========================== */
+
+    :root {
+      --background: #0b1120;
+      --surface: #111b2e;
+      --border: #253047;
+      --text: #e5e7eb;
+      --muted: #aab5c8;
+      --accent: #67e8f9;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -16,12 +33,13 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #e5e7eb;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
       line-height: 1.7;
     }
 
@@ -30,106 +48,191 @@
       text-decoration: none;
     }
 
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    .container {
+      width: min(1100px, 84%);
+      margin: 0 auto;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .tag {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    /* =========================
+       2. BARRE DE NAVIGATION
+    ========================== */
+
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 8%;
-      border-bottom: 1px solid #253047;
+      gap: 24px;
     }
 
     .logo {
-      color: #67e8f9;
-      font-size: 1.4rem;
+      color: var(--accent);
+      font-size: 1.5rem;
       font-weight: bold;
     }
 
     nav {
       display: flex;
-      gap: 24px;
       flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s;
     }
 
     nav a:hover {
-      color: #67e8f9;
+      color: var(--accent);
     }
+
+    /* =========================
+       3. PAGE D'ACCUEIL
+    ========================== */
 
     .hero {
       min-height: 75vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 90px 8%;
-      max-width: 1100px;
-    }
-
-    .tag {
-      color: #67e8f9;
-      margin-bottom: 20px;
+      align-items: flex-start;
+      padding-top: 100px;
+      padding-bottom: 100px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1.15;
-      margin-bottom: 24px;
-    }
-
-    h1 span {
-      color: #67e8f9;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      line-height: 1.13;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
     }
 
     .intro {
-      max-width: 650px;
-      color: #aab5c8;
-      font-size: 1.1rem;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.9;
     }
 
     .button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 12px 22px;
-      border: 1px solid #67e8f9;
-      border-radius: 8px;
-      color: #67e8f9;
-      width: fit-content;
+      margin-top: 32px;
+      padding: 12px 23px;
+      border: 1px solid var(--accent);
+      border-radius: 7px;
+      color: var(--accent);
+      font-weight: bold;
+      transition: background 0.2s, transform 0.2s;
     }
 
     .button:hover {
-      background: #164e63;
+      background: #123344;
+      transform: translateY(-2px);
     }
 
-    section {
-      padding: 70px 8%;
-      scroll-margin-top: 30px;
+    /* =========================
+       4. SECTIONS
+    ========================== */
+
+    section.content-section {
+      padding-top: 85px;
+      padding-bottom: 85px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      margin-bottom: 28px;
+      line-height: 1.25;
     }
+
+    /* =========================
+       5. CARTES DE PROJETS
+    ========================== */
 
     .grid {
       display: grid;
       grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+        repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
     }
 
     .card {
-      background: #111b2e;
-      border: 1px solid #253047;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 25px;
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
     }
 
     .card h3 {
-      color: #67e8f9;
-      margin-bottom: 12px;
+      font-size: 1.2rem;
+      margin-bottom: 14px;
     }
 
     .card p {
-      color: #aab5c8;
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin-bottom: 20px;
     }
+
+    .project-link {
+      color: var(--accent);
+      margin-top: auto;
+      font-size: 0.95rem;
+    }
+
+    /* =========================
+       6. COMPÉTENCES
+    ========================== */
 
     .skills {
       display: flex;
@@ -137,33 +240,108 @@
       gap: 12px;
     }
 
-    .skills span {
+    .skill {
       border: 1px solid #34445e;
-      border-radius: 20px;
-      padding: 8px 16px;
+      background: var(--surface);
+      border-radius: 30px;
+      padding: 9px 17px;
       color: #cbd5e1;
+      font-size: 0.95rem;
     }
+
+    /* =========================
+       7. CONTACT
+    ========================== */
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
+    }
+
+    .contact-links a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* =========================
+       8. PIED DE PAGE
+    ========================== */
 
     footer {
-      padding: 30px 8%;
-      border-top: 1px solid #253047;
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: #8491a7;
+      font-size: 0.9rem;
       text-align: center;
-      color: #94a3b8;
     }
 
-    @media (max-width: 600px) {
-      header {
+    /* =========================
+       9. ADAPTATION MOBILE
+    ========================== */
+
+    @media (max-width: 650px) {
+      .container {
+        width: 88%;
+      }
+
+      .navbar {
+        padding-top: 15px;
+        padding-bottom: 15px;
         align-items: flex-start;
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
       }
 
       nav {
-        gap: 14px;
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 0.88rem;
       }
 
       .hero {
         min-height: 65vh;
+        padding-top: 75px;
+        padding-bottom: 75px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      section.content-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+      }
+
+      .card {
+        padding: 23px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
@@ -171,115 +349,268 @@
 
 <body>
 
-  <header>
-    <a class="logo" href="#">Karl.</a>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-    <nav>
-      <a href="#about">À propos</a>
-      <a href="#projects">Projets</a>
-      <a href="#skills">Compétences</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header>
+    <div class="container navbar">
+
+      <a class="logo" href="#home">Karl.</a>
+
+      <nav aria-label="Navigation principale">
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#skills">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <p class="tag">INGÉNIERIE MATHÉMATIQUE · DATA SCIENCE</p>
+
+    <!-- =========================
+         ACCUEIL
+    ========================== -->
+
+    <section class="container hero" id="home">
+
+      <p class="tag">
+        ÉLÈVE-INGÉNIEUR · POLYTECH CLERMONT
+      </p>
 
       <h1>
-        Comprendre le monde<br>
-        grâce aux <span>mathématiques</span><br>
-        et au code.
+        Les mathématiques<br>
+        pour comprendre.<br>
+        Le code pour <span class="accent">construire.</span>
       </h1>
 
       <p class="intro">
-        Je m'intéresse à la modélisation mathématique,
-        à l'analyse de données et à l'intelligence artificielle.
-        Ce portfolio présente mes projets et mon parcours.
+        Je suis élève-ingénieur en Ingénierie Mathématique
+        &amp; Data Science à Polytech Clermont.
+
+        Je m'intéresse à la manière dont les mathématiques,
+        la programmation et l'intelligence artificielle
+        peuvent être mobilisées pour modéliser des phénomènes,
+        analyser des données et résoudre des problèmes concrets.
       </p>
 
       <a class="button" href="#projects">
         Découvrir mes projets →
       </a>
+
     </section>
 
-    <section id="about">
-      <h2>À propos de moi</h2>
-      <p class="intro">
-        Mon parcours en ingénierie mathématique et Data Science
-        me permet d'explorer les liens entre les mathématiques,
-        la programmation et la résolution de problèmes concrets.
-        J'aime également rendre les concepts scientifiques
-        plus accessibles grâce à la visualisation.
-      </p>
-    </section>
+    <!-- =========================
+         À PROPOS
+    ========================== -->
 
-    <section id="projects">
-      <h2>Mes projets</h2>
+    <section class="content-section" id="about">
 
-      <div class="grid">
-        <article class="card">
-          <h3>01. Simulation budgétaire</h3>
-          <p>
-            Modélisation d'un simulateur budgétaire dynamique
-            pour étudiants internationaux, réalisé lors
-            d'un hackathon.
-          </p>
-        </article>
+      <div class="container">
 
-        <article class="card">
-          <h3>02. Visualisation scientifique</h3>
-          <p>
-            Utilisation de Python et Manim pour créer
-            des animations pédagogiques autour des
-            mathématiques et de la programmation.
-          </p>
-        </article>
+        <p class="section-label">MON PARCOURS</p>
 
-        <article class="card">
-          <h3>03. Analyse de données</h3>
-          <p>
-            Exploration de données avec Python, pandas
-            et SQL : extraction, manipulation et analyse
-            de bases de données.
-          </p>
-        </article>
+        <h2>À propos de moi</h2>
+
+        <p class="intro">
+          Ma formation en Ingénierie Mathématique &amp;
+          Data Science m'amène à explorer les liens entre
+          les mathématiques, l'informatique et l'intelligence
+          artificielle.
+
+          <br><br>
+
+          À travers mes projets, je m'intéresse autant à la
+          compréhension des méthodes qu'à leur mise en pratique :
+          modéliser un problème, exploiter des données,
+          développer une solution et interpréter les résultats.
+
+          <br><br>
+
+          J'accorde également une place importante à la
+          visualisation scientifique, qui permet de rendre
+          les concepts complexes plus intuitifs et accessibles.
+        </p>
+
       </div>
+
     </section>
 
-    <section id="skills">
-      <h2>Compétences</h2>
+    <!-- =========================
+         PROJETS
+    ========================== -->
 
-      <div class="skills">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>pandas</span>
-        <span>Data Science</span>
-        <span>Mathématiques appliquées</span>
-        <span>Optimisation</span>
-        <span>Manim</span>
-        <span>Git & GitHub</span>
+    <section class="content-section" id="projects">
+
+      <div class="container">
+
+        <p class="section-label">MES RÉALISATIONS</p>
+
+        <h2>Projets sélectionnés</h2>
+
+        <div class="grid">
+
+          <article class="card">
+
+            <p class="project-number">PROJET 01</p>
+
+            <h3>Simulation budgétaire</h3>
+
+            <p>
+              Modélisation et implémentation d'un simulateur
+              budgétaire dynamique pour étudiants internationaux,
+              dans le cadre d'un hackathon de 48 heures.
+            </p>
+
+            <span class="project-link">
+              Python · Modélisation · Simulation
+            </span>
+
+          </article>
+
+          <article class="card">
+
+            <p class="project-number">PROJET 02</p>
+
+            <h3>Visualisation scientifique avec Manim</h3>
+
+            <p>
+              Création d'animations pédagogiques en Python
+              pour explorer des concepts mathématiques,
+              illustrer des transformations et expliquer
+              des notions de programmation.
+            </p>
+
+            <span class="project-link">
+              Python · Manim · Mathématiques
+            </span>
+
+          </article>
+
+          <article class="card">
+
+            <p class="project-number">PROJET 03</p>
+
+            <h3>Analyse de données et SQL</h3>
+
+            <p>
+              Exploration de bases de données, rédaction
+              de requêtes SQL et manipulation de résultats
+              avec Python et pandas.
+            </p>
+
+            <span class="project-link">
+              SQL · Python · pandas
+            </span>
+
+          </article>
+
+          <article class="card">
+
+            <p class="project-number">PROJET 04</p>
+
+            <h3>Optimisation mathématique et IA</h3>
+
+            <p>
+              Exploration des liens entre convexité,
+              fonctions de coût, optimisation et apprentissage
+              automatique.
+            </p>
+
+            <span class="project-link">
+              Mathématiques · Optimisation · IA
+            </span>
+
+          </article>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section id="contact">
-      <h2>Me contacter</h2>
-      <p class="intro">
-        Intéressé par mon parcours ou mes projets ?
-        Retrouvez mon code et mes réalisations sur GitHub.
-      </p>
+    <!-- =========================
+         COMPÉTENCES
+    ========================== -->
 
-      <a class="button"
-         href="https://github.com/Karlmintoo"
-         target="_blank"
-         rel="noopener noreferrer">
-        Mon profil GitHub →
-      </a>
+    <section class="content-section" id="skills">
+
+      <div class="container">
+
+        <p class="section-label">OUTILS ET DOMAINES</p>
+
+        <h2>Compétences</h2>
+
+        <div class="skills">
+          <span class="skill">Python</span>
+          <span class="skill">SQL</span>
+          <span class="skill">pandas</span>
+          <span class="skill">Jupyter Notebook</span>
+          <span class="skill">Git &amp; GitHub</span>
+          <span class="skill">Manim</span>
+          <span class="skill">Mathématiques appliquées</span>
+          <span class="skill">Modélisation</span>
+          <span class="skill">Optimisation</span>
+          <span class="skill">Data Science</span>
+          <span class="skill">Intelligence artificielle</span>
+        </div>
+
+      </div>
+
     </section>
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="content-section" id="contact">
+
+      <div class="container">
+
+        <p class="section-label">ÉCHANGEONS</p>
+
+        <h2>Me contacter</h2>
+
+        <div class="contact-card">
+
+          <p class="intro">
+            Vous souhaitez découvrir mes projets, échanger
+            autour des mathématiques appliquées ou de la
+            Data Science ? Retrouvez mon code et mes
+            réalisations sur GitHub.
+          </p>
+
+          <div class="contact-links">
+
+            <a
+              href="https://github.com/Karlmintoo"
+              target="_blank"
+              rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+            <!-- Ajoute ici ton lien LinkedIn lorsque tu l'auras. -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
+  <!-- =========================
+       PIED DE PAGE
+  ========================== -->
+
   <footer>
-    © 2026 Karl — Portfolio personnel
+    <div class="container">
+      © 2026 Karl · Portfolio personnel
+    </div>
   </footer>
 
 </body>
