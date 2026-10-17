@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Karl</title>
+  <meta name="description" content="Portfolio en ingénierie mathématique, Data Science et intelligence artificielle.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      border-bottom: 1px solid #253047;
+    }
+
+    .logo {
+      color: #67e8f9;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a:hover {
+      color: #67e8f9;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 90px 8%;
+      max-width: 1100px;
+    }
+
+    .tag {
+      color: #67e8f9;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: #67e8f9;
+    }
+
+    .intro {
+      max-width: 650px;
+      color: #aab5c8;
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 22px;
+      border: 1px solid #67e8f9;
+      border-radius: 8px;
+      color: #67e8f9;
+      width: fit-content;
+    }
+
+    .button:hover {
+      background: #164e63;
+    }
+
+    section {
+      padding: 70px 8%;
+      scroll-margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #111b2e;
+      border: 1px solid #253047;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      color: #67e8f9;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #aab5c8;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skills span {
+      border: 1px solid #34445e;
+      border-radius: 20px;
+      padding: 8px 16px;
+      color: #cbd5e1;
+    }
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #253047;
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: 65vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="#">Karl.</a>
+
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="tag">INGÉNIERIE MATHÉMATIQUE · DATA SCIENCE</p>
+
+      <h1>
+        Comprendre le monde<br>
+        grâce aux <span>mathématiques</span><br>
+        et au code.
+      </h1>
+
+      <p class="intro">
+        Je m'intéresse à la modélisation mathématique,
+        à l'analyse de données et à l'intelligence artificielle.
+        Ce portfolio présente mes projets et mon parcours.
+      </p>
+
+      <a class="button" href="#projects">
+        Découvrir mes projets →
+      </a>
+    </section>
+
+    <section id="about">
+      <h2>À propos de moi</h2>
+      <p class="intro">
+        Mon parcours en ingénierie mathématique et Data Science
+        me permet d'explorer les liens entre les mathématiques,
+        la programmation et la résolution de problèmes concrets.
+        J'aime également rendre les concepts scientifiques
+        plus accessibles grâce à la visualisation.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Mes projets</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>01. Simulation budgétaire</h3>
+          <p>
+            Modélisation d'un simulateur budgétaire dynamique
+            pour étudiants internationaux, réalisé lors
+            d'un hackathon.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>02. Visualisation scientifique</h3>
+          <p>
+            Utilisation de Python et Manim pour créer
+            des animations pédagogiques autour des
+            mathématiques et de la programmation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>03. Analyse de données</h3>
+          <p>
+            Exploration de données avec Python, pandas
+            et SQL : extraction, manipulation et analyse
+            de bases de données.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Compétences</h2>
+
+      <div class="skills">
+        <span>Python</span>
+        <span>SQL</span>
+        <span>pandas</span>
+        <span>Data Science</span>
+        <span>Mathématiques appliquées</span>
+        <span>Optimisation</span>
+        <span>Manim</span>
+        <span>Git & GitHub</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Me contacter</h2>
+      <p class="intro">
+        Intéressé par mon parcours ou mes projets ?
+        Retrouvez mon code et mes réalisations sur GitHub.
+      </p>
+
+      <a class="button"
+         href="https://github.com/Karlmintoo"
+         target="_blank"
+         rel="noopener noreferrer">
+        Mon profil GitHub →
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Karl — Portfolio personnel
+  </footer>
+
+</body>
+</html>
